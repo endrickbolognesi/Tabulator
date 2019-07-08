@@ -11,13 +11,40 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="http://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>
-    <script type="text/javascript" src="node_modules/tabulator-tables/dist/js/tabulator.min.js"></script>
-   
+        <script type="text/javascript" src="node_modules/tabulator-tables/dist/js/tabulator.min.js"></script>
+    
     <title>Teste</title>
 </head>
 <body>
     <div class="container-fluid">
-        <button type="submit" class="btn btn-primary" id="download-xlsx">XLXB</button>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Pasta 23.201- 23.250</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Baixar</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">PDF</a>
+                        <a class="dropdown-item" href="#" id="download-xlsx">Excel/Xlsx</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Procurar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
+            </form>
+        </div>
+    </nav>
+
+        <!-- <button type="submit" class="btn btn-primary" id="download-xlsx">XLXB</button> -->
         
         <div id="example-table"></div>
         
@@ -89,7 +116,7 @@ var dateEditor = function(cell, onRendered, success, cancel){
 
     var table = new Tabulator("#example-table", {
     data:teste,
-    height:"311px",
+    height:"500px",
     columns:[
         {title:"Matricula", field:"id", width:200, editor:true},
         {title:"Nome", field:"name", width:100, editor:true},
