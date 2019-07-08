@@ -63,10 +63,19 @@
     while ($r = $data->fetch()): 
     ?>
 
-    {id:<?php echo $r['matricula_id'] ?>, 
-    name:"<?php echo $r['nome']; ?>", 
-    datarasc:"<?php echo $r['data_rascunho']; ?>", 
-    dataconf:"<?php echo $r['data_conf']; ?>"
+    {
+        id:<?php echo $r['matricula_id'] ?>, 
+        datarasc:"<?php echo $r['data_rascunho']; ?>", 
+        // dataCerta:"<?php echo $r['newdate']; ?>"
+        // area:"<?php echo $r['area']; ?>",
+        // proprietarios:"<?php echo $r['proprietarios']; ?>",
+        // cadImibiliario:"<?php echo $r['cad_imobiliario']; ?>",
+        // onus:"<?php echo $r['onus_vigente']; ?>",
+        // dataNova:"<?php echo $r['datanova']; ?>",
+        name:"<?php echo $r['nome']; ?>", 
+        // atosCad:"<?php echo $r['atos_cadastrados']; ?>",
+        // atosExis:"<?php echo $r['atos_existentes']; ?>",
+        // duvidas:"<?php echo $r['duvidas']; ?>"
     
     },
     <?php endwhile; ?>
@@ -117,11 +126,21 @@ var dateEditor = function(cell, onRendered, success, cancel){
     var table = new Tabulator("#example-table", {
     data:teste,
     height:"500px",
+    layout:"fitColumns",
+    persistenceMode: true,
     columns:[
-        {title:"Matricula", field:"id", width:200, editor:true},
+        {title:"Matricula", field:"id", width:100, editor:true},
         {title:"Nome", field:"name", width:100, editor:true},
         {title:"Data", field:"datarasc", editor:true},
-        {title:"Data Conf", field:"dataconf", editor:true},
+        {title:"Data Certa F", field:"dataCerta", editor:true},
+        {title:"Area", field:"area", editor:true},
+        {title:"Proprietarios", field:"proprietarios", editor:true},
+        {title:"Cadastro Imobiliario", field:"cadImibiliario", editor:true},
+        {title:"Ônus", field:"onus", editor:true},
+        {title:"DataConf", field:"dataNova", editor:true},
+        {title:"Atos Cadastrados", field:"atosCad", editor:true},
+        {title:"Atos Existentes", field:"atosExis", editor:true},
+        {title:"Dúvidas", field:"duvidas", editor:true},
     ],
 });
 
